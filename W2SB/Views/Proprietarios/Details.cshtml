@@ -1,0 +1,83 @@
+﻿@model W2SB.Models.Proprietario
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Proprietarios";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <h4>Proprietario</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Celular)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Celular)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Endereco)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cidade)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Uf)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Uf)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Rg)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Rg)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cpf)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.ProprietarioId }) |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>

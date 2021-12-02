@@ -1,0 +1,81 @@
+﻿@model IEnumerable<W2SB.Models.Proprietario>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Proprietrios";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indice de Proprietarios</title>
+</head>
+<body>
+    <p>
+        <h4>Proprietarios</h4>
+
+        @Html.ActionLink("Novo", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ProprietarioId }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.ProprietarioId }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.ProprietarioId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

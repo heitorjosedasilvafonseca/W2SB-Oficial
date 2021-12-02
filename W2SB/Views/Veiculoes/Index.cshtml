@@ -1,0 +1,77 @@
+﻿@model IEnumerable<W2SB.Models.Veiculo>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Veiculos";
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indice de Veiculos</title>
+</head>
+<body>
+    <p>
+        <h4>Veiculos</h4>
+
+        @Html.ActionLink("Novo", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("Proprietário")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Combustivel)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.proprietario.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Combustivel)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.VeiculoId }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.VeiculoId }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.VeiculoId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
